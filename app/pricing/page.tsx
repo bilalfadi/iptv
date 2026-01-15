@@ -10,7 +10,7 @@ export const metadata: Metadata = generateSEO({
   title: 'Pricing Plans - Best IPTV Subscription',
   description: 'Affordable IPTV subscription plans starting from $14/month. Get 30,000+ channels, 200,000+ movies, HD/4K quality, 24/7 support, instant activation, and free 24-hour trial.',
   keywords: ['IPTV pricing', 'IPTV plans', 'cheap IPTV', 'IPTV subscription cost', 'IPTV price'],
-  canonical: 'https://4kxtreamiptv.com/pricing/',
+  canonical: 'https://4kxtreamiptv.com/pricing',
   image: '/logo.png',
   type: 'website',
 });

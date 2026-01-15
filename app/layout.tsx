@@ -32,7 +32,7 @@ export const metadata: Metadata = generateSEO({
     'IPTV premium',
     'IPTV subscription plans',
   ],
-  canonical: 'https://4kxtreamiptv.com/',
+  canonical: 'https://4kxtreamiptv.com',
   image: '/logo.png',
   type: 'website',
 })

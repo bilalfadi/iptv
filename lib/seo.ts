@@ -73,7 +73,11 @@ export function generateSEO(config: SEOConfig): Metadata {
 
   const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
   const allKeywords = [...defaultKeywords, ...keywords].join(', ');
-  const canonicalUrl = canonical || siteUrl;
+  // Remove trailing slash from canonical URL (except for homepage)
+  const rawCanonical = canonical || siteUrl;
+  const canonicalUrl = rawCanonical === siteUrl || rawCanonical === `${siteUrl}/` 
+    ? siteUrl 
+    : rawCanonical.replace(/\/$/, '');
   const imageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
 
   const metadata: Metadata = {

@@ -8,7 +8,7 @@ export const metadata: Metadata = generateSEO({
   title: 'Terms of Use',
   description: 'Read the terms and conditions for using 4K Xtream IPTV services. Understand your rights and responsibilities when subscribing to our IPTV service.',
   keywords: ['terms of service', 'terms and conditions', 'user agreement', 'legal', 'IPTV terms'],
-  canonical: 'https://4kxtreamiptv.com/terms-of-use/',
+  canonical: 'https://4kxtreamiptv.com/terms-of-use',
   image: '/logo.png',
   type: 'website',
 });

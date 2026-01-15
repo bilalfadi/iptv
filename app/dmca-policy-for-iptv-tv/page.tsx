@@ -8,7 +8,7 @@ export const metadata: Metadata = generateSEO({
   title: 'DMCA Policy',
   description: 'Digital Millennium Copyright Act (DMCA) policy for 4K Xtream IPTV. Learn how to submit copyright notices and takedown requests.',
   keywords: ['DMCA policy', 'copyright policy', 'DMCA notice', 'copyright protection'],
-  canonical: 'https://4kxtreamiptv.com/dmca-policy-for-iptv-tv/',
+  canonical: 'https://4kxtreamiptv.com/dmca-policy-for-iptv-tv',
   image: '/logo.png',
   type: 'website',
 });

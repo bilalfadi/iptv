@@ -9,7 +9,7 @@ export const metadata: Metadata = generateSEO({
   title: 'IPTV Reseller Program',
   description: 'Start your own IPTV business with 4K Xtream IPTV reseller program. Affordable entry from €250, powerful servers, 24/7 support, white-label solution, and unlimited potential.',
   keywords: ['IPTV reseller', 'IPTV business', 'IPTV reseller program', 'reseller IPTV', 'become IPTV reseller'],
-  canonical: 'https://4kxtreamiptv.com/iptv-reseller/',
+  canonical: 'https://4kxtreamiptv.com/iptv-reseller',
   image: '/logo.png',
   type: 'website',
 });

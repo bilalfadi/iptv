@@ -29,8 +29,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     ? post.excerpt 
     : post.excerpt?.rendered?.replace(/<[^>]*>/g, '') || '';
 
-  // Use exact WordPress URL as canonical
-  const canonicalUrl = post.link || `https://4kxtreamiptv.com/blog/${post.slug}/`;
+  // Use exact WordPress URL as canonical (remove trailing slash)
+  const rawCanonical = post.link || `https://4kxtreamiptv.com/blog/${post.slug}`;
+  const canonicalUrl = rawCanonical.replace(/\/$/, '');
 
   // Extract image from content if available
   const contentMatch = post.content?.match(/<img[^>]+src="([^"]+)"/i);
