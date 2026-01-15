@@ -71,12 +71,12 @@ export default function Pricing() {
                     ${plan.price}
                   </span>
                 </div>
-                {plan.originalPrice && (
+                {'originalPrice' in plan && plan.originalPrice && (
                   <div className="text-lg text-gray-400 line-through">
                     ${plan.originalPrice}
                   </div>
                 )}
-                {plan.screens && (
+                {'screens' in plan && plan.screens && (
                   <div className="mt-3 inline-block bg-[#ff9500]/10 text-[#ff9500] px-3 py-1 rounded-full text-sm font-semibold">
                     Duo ({plan.screens} {t.pricing.screens})
                   </div>
@@ -92,7 +92,7 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              {plan.guarantee && (
+              {'guarantee' in plan && plan.guarantee && (
                 <div className="text-center text-xs text-gray-500 mb-4 bg-gray-50 py-2 px-3 rounded">
                   {t.pricing.guarantee}
                 </div>

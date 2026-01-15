@@ -31,7 +31,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const canonicalUrl = page.link || `https://4kxtreamiptv.com/${page.slug}/`;
 
   // Extract image from content if available
-  const contentMatch = page.content?.match(/<img[^>]+src="([^"]+)"/i);
+  const pageContent = typeof page.content === 'string' ? page.content : (page.content?.rendered || '');
+  const contentMatch = pageContent.match(/<img[^>]+src="([^"]+)"/i);
   const imageUrl = contentMatch ? contentMatch[1] : '/logo.png';
 
   return generateSEO({
@@ -51,7 +52,14 @@ export default function DynamicPage({ params }: { params: { slug: string } }) {
     notFound();
   }
 
-  const processedContent = processContent(page.content);
+  // Handle content that might be object or string
+  const pageContent = typeof page.content === 'string' 
+    ? page.content 
+    : (typeof page.content === 'object' && page.content?.rendered 
+      ? page.content.rendered 
+      : '');
+  
+  const processedContent = processContent(pageContent);
 
   return (
     <main className="min-h-screen bg-gradient-to-r from-[#281a4e] via-[#2d1f5a] to-[#ff9500] relative overflow-hidden">

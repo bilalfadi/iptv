@@ -127,10 +127,12 @@ export function getLocalImagePath(wordpressUrl: string): string {
 
 // Process WordPress content HTML
 // Remove WordPress domain URLs and replace with local paths
-export function processContent(content: string): string {
+export function processContent(content: string | null | undefined): string {
   if (!content) return '';
   
-  let processed = content;
+  // Ensure content is a string
+  const contentStr = typeof content === 'string' ? content : String(content || '');
+  let processed = contentStr;
   
   // Replace WordPress image URLs with local paths (preserve directory structure)
   // Match: https://4kxtreamiptv.com/wp-content/uploads/...
