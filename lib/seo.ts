@@ -128,8 +128,7 @@ export function generateSEO(config: SEOConfig): Metadata {
       site: '@4kxtreamiptv',
     },
     verification: {
-      // Add verification codes here when available
-      // google: 'your-google-verification-code',
+      google: 'SvT3lTrsvUcni_UYTVIpexSIGCavZvpAVxc7SORI1mQ',
       // yandex: 'your-yandex-verification-code',
       // bing: 'your-bing-verification-code',
     },
