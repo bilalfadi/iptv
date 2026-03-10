@@ -123,6 +123,55 @@ export default function IPTVTrialPage() {
         </div>
       </section>
 
+      {/* Clear 3-step strip – same idea as Sonix “How it works” but focused only on free trial */}
+      <section className="py-12 bg-[#0f0f23] border-t border-white/10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+              How to get your 24‑hour free IPTV trial
+            </h2>
+            <p className="text-sm md:text-base text-gray-300 max-w-2xl mx-auto">
+              No payment and no contract. Just send us your details, we activate your line, and you start watching.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="bg-[#111126] border border-white/10 rounded-2xl p-6 text-center">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-teal-500/20 text-teal-300 text-lg font-bold">
+                1
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Send us a message</h3>
+              <p className="text-sm text-gray-300">
+                Click the WhatsApp button above and send: your name, email, device (TV/Box/Phone), app you use and your
+                country.
+              </p>
+            </div>
+
+            <div className="bg-[#111126] border border-white/10 rounded-2xl p-6 text-center">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-teal-500/20 text-teal-300 text-lg font-bold">
+                2
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">We create your trial line</h3>
+              <p className="text-sm text-gray-300">
+                Our team activates your 24‑hour IPTV trial and sends you login details (M3U / Xtream Codes) with simple
+                setup instructions.
+              </p>
+            </div>
+
+            <div className="bg-[#111126] border border-white/10 rounded-2xl p-6 text-center">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-teal-500/20 text-teal-300 text-lg font-bold">
+                3
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Login & start watching</h3>
+              <p className="text-sm text-gray-300">
+                Enter the details in your IPTV app and enjoy all live channels, movies and series during the free
+                trial. If you like it, upgrade to a paid plan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Trial Features */}
       <section className="py-20 bg-[#0f0f23]">
         <div className="container mx-auto px-4">

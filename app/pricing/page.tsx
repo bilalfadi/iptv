@@ -8,7 +8,7 @@ import Script from 'next/script';
 
 export const metadata: Metadata = generateSEO({
   title: 'Pricing Plans - Best IPTV Subscription',
-  description: 'Affordable IPTV subscription plans starting from $14/month. Get 30,000+ channels, 200,000+ movies, HD/4K quality, 24/7 support, instant activation, and free 24-hour trial.',
+  description: 'Affordable IPTV subscription plans starting from $10/month. Get 98,000+ channels, 50K+ VOD, HD/4K quality, 24/7 support, instant activation, and free 24-hour trial.',
   keywords: ['IPTV pricing', 'IPTV plans', 'cheap IPTV', 'IPTV subscription cost', 'IPTV price'],
   canonical: 'https://www.4kxtreamiptv.com/pricing',
   image: '/logo.png',
@@ -18,84 +18,93 @@ export const metadata: Metadata = generateSEO({
 const singleDevicePlans = [
   {
     duration: '1 Month',
-    price: 14,
+    price: 10,
     popular: false,
     features: [
-      '30,000+ TV Channels',
-      '200,000+ Movies & Series',
-      'HD/HEVC/4K Quality',
-      'Subtitles Included',
-      'Built-in VPN Security',
-      'Catch-Up (Replay)',
-      '99.9% Uptime',
-      'All Devices Supported',
-      'Instant Activation',
-      'ALL PPV Events',
-      'Adult Content (18+)'
+      '24/7 support / live chat support',
+      '99.9% Stable',
+      'Free Updates',
+      'Smart TV & Smartphone & PC',
+      'TV Guide (EPG)',
+      'Movies & TV shows on demand',
+      'Top sport channels & PPV',
+      'NBA, NHL, NFL Package',
+      '4K FHD HD High Quality',
+      '+98 000 Channels & +50K VOD',
+      'Anti-Freezing Technology',
+      'Instant Activation!',
     ]
   },
   {
-    duration: '3 Months',
-    price: 25,
+    duration: '3 Months (+ 1 Free Month)',
+    price: 34.95,
     popular: true,
     features: [
-      '30,000+ TV Channels',
-      '200,000+ Movies & Series',
-      'HD/HEVC/4K Quality',
-      'Subtitles Included',
-      'Built-in VPN Security',
-      'Catch-Up (Replay)',
-      '99.9% Uptime',
-      'All Devices Supported',
-      'Instant Activation',
-      'ALL PPV Events',
-      'Adult Content (18+)'
+      '24/7 support / live chat support',
+      '99.9% Stable',
+      'Free Updates',
+      'Smart TV & Smartphone & PC',
+      'TV Guide (EPG)',
+      'Movies & TV shows on demand',
+      'Top sport channels & PPV',
+      'NBA, NHL, NFL Package',
+      '4K FHD HD High Quality',
+      '+98 000 Channels & +50K VOD',
+      'Anti-Freezing Technology',
+      'Instant Activation!',
     ]
   },
   {
-    duration: '6 Months',
-    price: 40,
+    duration: '6 Months (+ 1 Free Month)',
+    price: 44.95,
     popular: false,
     features: [
-      '30,000+ TV Channels',
-      '200,000+ Movies & Series',
-      'HD/HEVC/4K Quality',
-      'Subtitles Included',
-      'Built-in VPN Security',
-      'Catch-Up (Replay)',
-      '99.9% Uptime',
-      'All Devices Supported',
-      'Instant Activation',
-      'ALL PPV Events',
-      'Adult Content (18+)'
+      '24/7 support / live chat support',
+      '99.9% Stable',
+      'Free Updates',
+      'Smart TV & Smartphone & PC',
+      'TV Guide (EPG)',
+      'Movies & TV shows on demand',
+      'Top sport channels & PPV',
+      'NBA, NHL, NFL Package',
+      '4K FHD HD High Quality',
+      '+98 000 Channels & +50K VOD',
+      'Anti-Freezing Technology',
+      'Instant Activation!',
     ]
   },
   {
-    duration: '12 Months',
-    price: 60,
+    duration: '12 Months (+ 1 Free Month)',
+    price: 69.95,
     popular: false,
     features: [
-      '30,000+ TV Channels',
-      '200,000+ Movies & Series',
-      'HD/HEVC/4K Quality',
-      'Subtitles Included',
-      'Built-in VPN Security',
-      'Catch-Up (Replay)',
-      '99.9% Uptime',
-      'All Devices Supported',
-      'Instant Activation',
-      'ALL PPV Events',
-      'Adult Content (18+)'
+      '24/7 support / live chat support',
+      '99.9% Stable',
+      'Free Updates',
+      'Smart TV & Smartphone & PC',
+      'TV Guide (EPG)',
+      'Movies & TV shows on demand',
+      'Top sport channels & PPV',
+      'NBA, NHL, NFL Package',
+      '4K FHD HD High Quality',
+      '+98 000 Channels & +50K VOD',
+      'Anti-Freezing Technology',
+      'Instant Activation!',
     ]
   }
 ];
 
-const familyPlans = [
-  { duration: '1 Month', price: 20, screens: 2 },
-  { duration: '3 Months', price: 40, screens: 2 },
-  { duration: '6 Months', price: 60, screens: 2 },
-  { duration: '12 Months', price: 99, screens: 2, popular: true }
-];
+const makeMultiDevicePlans = (devices: number, discount: number) =>
+  singleDevicePlans.map((plan) => {
+    const price = +(plan.price * devices * (1 - discount)).toFixed(2);
+    return {
+      ...plan,
+      price,
+    };
+  });
+
+const twoDevicePlans = makeMultiDevicePlans(2, 0.3);
+const threeDevicePlans = makeMultiDevicePlans(3, 0.5);
 
 const guarantees = [
   { icon: Shield, title: '7-Day Money Back', description: 'Full refund if not satisfied' },
@@ -241,43 +250,61 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Family Plans */}
+      {/* 2 Devices – ~30% OFF */}
       <section className="py-20 bg-[#0a0a1a]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-2">Family Package - 2 Screens</h2>
-            <p className="text-gray-400">Share with your family on 2 devices simultaneously</p>
+            <h2 className="text-3xl font-bold text-white mb-2">2 Devices – Save around 30%</h2>
+            <p className="text-gray-400">Use your IPTV subscription on 2 devices at the same time (living room + bedroom, etc.).</p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {familyPlans.map((plan, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {twoDevicePlans.map((plan, index) => (
               <div 
                 key={index}
-                className={`relative rounded-2xl p-6 text-center ${
-                  plan.popular 
-                    ? 'bg-gradient-to-br from-teal-600 to-orange-600 shadow-xl shadow-teal-500/30' 
-                    : 'bg-[#1a1a2e] border border-gray-800'
-                }`}
+                className="relative rounded-2xl p-6 text-center bg-[#1a1a2e] border border-gray-800"
               >
-                {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-gray-900 px-3 py-1 rounded-full text-xs font-bold">
-                    BEST VALUE
-                  </div>
-                )}
                 <h3 className="text-lg font-bold text-white mb-1">{plan.duration}</h3>
                 <div className="text-4xl font-black text-white mb-2">${plan.price}</div>
-                <p className="text-gray-300 text-sm mb-4">{plan.screens} Screens - {plan.screens} Connections</p>
+                <p className="text-gray-300 text-sm mb-4">2 devices – same channels, one subscription</p>
                 <a 
-                  href="https://wa.me/447845432224"
+                  href="https://wa.me/447845432224?text=Hi,%20I%20want%20a%202%20devices%20IPTV%20plan"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`block w-full py-3 rounded-xl font-bold transition-all ${
-                    plan.popular 
-                      ? 'bg-white text-teal-600 hover:bg-gray-100' 
-                      : 'bg-teal-600/20 border border-teal-500/30 text-teal-300 hover:bg-teal-600/30'
-                  }`}
+                  className="block w-full py-3 rounded-xl font-bold transition-all bg-teal-600/20 border border-teal-500/30 text-teal-300 hover:bg-teal-600/30"
                 >
-                  Contact Now
+                  Contact for 2 devices
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3 Devices – ~50% OFF */}
+      <section className="py-20 bg-[#0f0f23]">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-2">3 Devices – Save around 50%</h2>
+            <p className="text-gray-400">Perfect for families – up to 3 TVs/boxes/phones watching at the same time.</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {threeDevicePlans.map((plan, index) => (
+              <div 
+                key={index}
+                className="relative rounded-2xl p-6 text-center bg-[#1a1a2e] border border-gray-800"
+              >
+                <h3 className="text-lg font-bold text-white mb-1">{plan.duration}</h3>
+                <div className="text-4xl font-black text-white mb-2">${plan.price}</div>
+                <p className="text-gray-300 text-sm mb-4">3 devices – full access on all screens</p>
+                <a 
+                  href="https://wa.me/447845432224?text=Hi,%20I%20want%20a%203%20devices%20IPTV%20plan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-3 rounded-xl font-bold transition-all bg-teal-600/20 border border-teal-500/30 text-teal-300 hover:bg-teal-600/30"
+                >
+                  Contact for 3 devices
                 </a>
               </div>
             ))}

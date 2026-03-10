@@ -4,12 +4,15 @@ import { useState } from 'react'
 import { Menu, X, Mail, Clock, Headphones } from 'lucide-react'
 import { siteData } from '@/data/siteData'
 import Link from 'next/link'
-import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { useLanguage } from './LanguageProvider'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const pathname = usePathname()
+
+  const basePrefix = language === 'en' ? '' : `/${language}`
 
   return (
     <header className="fixed top-0 w-full z-50 bg-white shadow-md">
@@ -56,40 +59,43 @@ export default function Header() {
       {/* Main Navigation */}
       <nav className="container mx-auto px-4 py-4 bg-white">
         <div className="flex items-center justify-between">
-          {/* Logo from WordPress */}
-          <Link href="/" className="flex items-center gap-3">
-            <Image
-              src="/logo.png"
+          {/* Logo – load directly from live site to avoid Next.js image optimizer error on /logo.png */}
+          <Link href={`${basePrefix}/`} className="flex items-center gap-3">
+            <img
+              src="https://www.4kxtreamiptv.com/logo.png"
               alt="4K Xtream IPTV Logo"
-              width={150}
-              height={43}
-              className="h-auto"
-              priority
+              className="h-[43px] w-auto"
             />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
             <Link
-              href="/"
+              href={`${basePrefix}/`}
               className={`font-medium transition-colors text-[#ff9500]`}
             >
               {t.nav.home.toUpperCase()}
             </Link>
             <Link
-              href="/iptv-trial"
+              href={`${basePrefix}/iptv-reseller`}
+              className="font-medium transition-colors text-gray-800 hover:text-[#ff9500]"
+            >
+              RESELLER
+            </Link>
+            <Link
+              href={`${basePrefix}/iptv-trial`}
               className="font-medium transition-colors text-gray-800 hover:text-[#ff9500]"
             >
               {t.nav.iptvTrial.toUpperCase()}
             </Link>
             <Link
-              href="/installation-tutorial"
+              href={`${basePrefix}/installation-tutorial`}
               className="font-medium transition-colors text-gray-800 hover:text-[#ff9500]"
             >
               {t.nav.installationTutorial.toUpperCase()}
             </Link>
             <Link
-              href="/pricing"
+              href={`${basePrefix}/pricing`}
               className="font-medium transition-colors text-gray-800 hover:text-[#ff9500]"
             >
               {t.nav.pricing.toUpperCase()}
@@ -124,28 +130,28 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-3">
             <Link
-              href="/"
+              href={`${basePrefix}/`}
               className="block font-medium transition-colors text-[#ff9500]"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t.nav.home.toUpperCase()}
             </Link>
             <Link
-              href="/iptv-trial"
+              href={`${basePrefix}/iptv-trial`}
               className="block font-medium transition-colors text-gray-800 hover:text-[#ff9500]"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t.nav.iptvTrial.toUpperCase()}
             </Link>
             <Link
-              href="/installation-tutorial"
+              href={`${basePrefix}/installation-tutorial`}
               className="block font-medium transition-colors text-gray-800 hover:text-[#ff9500]"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t.nav.installationTutorial.toUpperCase()}
             </Link>
             <Link
-              href="/pricing"
+              href={`${basePrefix}/pricing`}
               className="block font-medium transition-colors text-gray-800 hover:text-[#ff9500]"
               onClick={() => setMobileMenuOpen(false)}
             >

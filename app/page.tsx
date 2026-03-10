@@ -1,14 +1,15 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
-import FastStreaming from '@/components/FastStreaming'
-import TrustedSection from '@/components/TrustedSection'
+import DevicesStrip from '@/components/DevicesStrip'
+import MoviesShowcase from '@/components/MoviesShowcase'
+import SportsShowcase from '@/components/SportsShowcase'
 import Features from '@/components/Features'
 import Pricing from '@/components/Pricing'
-import Benefits from '@/components/Benefits'
-import HowToSubscribe from '@/components/HowToSubscribe'
+import LivePreview from '@/components/LivePreview'
 import FAQ from '@/components/FAQ'
 import Footer from '@/components/Footer'
 import Script from 'next/script'
+import Image from 'next/image'
 
 export default function Home() {
   // Service Schema for homepage
@@ -73,6 +74,16 @@ export default function Home() {
     ],
   };
 
+  // Kebit homepage small sports strip (1,2,3,42,43,44) – between sports & live preview
+  const kebitSportsStripImages = [
+    '/kebit-home/1.webp',
+    '/kebit-home/2.webp',
+    '/kebit-home/3.webp',
+    '/kebit-home/42.webp',
+    '/kebit-home/43.webp',
+    '/kebit-home/44.webp',
+  ]
+
   return (
     <main className="min-h-screen bg-[#0a0a1a] relative overflow-hidden">
       <Script
@@ -92,12 +103,43 @@ export default function Home() {
       <div className="relative z-10">
         <Header />
         <Hero />
+        <DevicesStrip />
+
+        {/* Kebit small horizontal sports strip (1,2,3,42,43,44) – placed directly under DevicesStrip */}
+        <section className="py-10 bg-[#050513]">
+          <div className="mx-auto w-full max-w-[1440px] px-3 md:px-6">
+            <div className="relative overflow-hidden">
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#050513] to-transparent" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#050513] to-transparent" />
+
+              <div className="flex gap-6 md:gap-7 animate-[movies-scroll_30s_linear_infinite] hover:[animation-play-state:paused]">
+                {[...kebitSportsStripImages, ...kebitSportsStripImages].map((src, index) => (
+                  <div
+                    key={`${src}-${index}`}
+                    className="flex-shrink-0 w-[170px] md:w-[185px] lg:w-[200px] rounded-3xl overflow-hidden bg-[#05091f] border border-white/10 shadow-lg shadow-black/40"
+                  >
+                    {/* Extra height + object-contain so full Kebit banners are visible without cropping */}
+                    <div className="relative w-full h-48 md:h-64 lg:h-72">
+                      <Image
+                        src={src}
+                        alt="Kebit sports strip"
+                        fill
+                        sizes="(min-width: 1024px) 234px, 60vw"
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <MoviesShowcase />
+        <SportsShowcase />
+        <LivePreview />
         <Features />
         <Pricing />
-        <FastStreaming />
-        <TrustedSection />
-        <Benefits />
-        <HowToSubscribe />
         <FAQ />
         <Footer />
       </div>

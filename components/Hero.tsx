@@ -15,7 +15,7 @@ export default function Hero() {
   ]
 
   return (
-    <section id="home" className="pt-20 pb-20 min-h-screen relative overflow-hidden flex items-center">
+    <section id="home" className="pt-28 md:pt-32 pb-20 min-h-screen relative overflow-hidden flex items-center">
       {/* Animated Background */}
       <div className="absolute inset-0 z-0 bg-[#0a0a1a]">
         {/* Gradient Orbs */}
@@ -27,7 +27,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiMxNDE0MjgiIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBtLTEgMGExIDEgMCAxIDAgMiAwYTEgMSAwIDEgMCAtMiAwIiBmaWxsPSIjMWYxZjM4IiBmaWxsLW9wYWNpdHk9Ii41Ii8+PC9nPjwvc3ZnPg==')] opacity-40" />
       </div>
       
-      <div className="relative z-10 container mx-auto px-4">
+      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-3 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
@@ -109,41 +109,53 @@ export default function Hero() {
 
           </div>
           
-          {/* Right Content - TV Mockup */}
+          {/* Right Content - Mixed collage using 3 main posters */}
           <motion.div
             className="hidden lg:block relative"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            {/* Main TV/Device Frame */}
-            <div className="relative">
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-teal-500/40 to-orange-500/40 rounded-3xl blur-3xl scale-90" />
-              
-              {/* TV Frame */}
-              <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-4 shadow-2xl border border-gray-700/50">
-                {/* Screen */}
-                <div className="relative bg-gradient-to-br from-[#1a1a2e] to-[#0f0f23] rounded-2xl overflow-hidden aspect-video">
-                  {/* TV Image */}
-                  <Image
-                    src="/images/wp-content/uploads/2024/12/tv_box.png"
-                    alt="IPTV Streaming"
-                    fill
-                    className="object-contain p-8"
-                  />
-                  
-                  {/* Play Button Overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 bg-gradient-to-r from-teal-500 to-orange-500 rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform shadow-2xl">
-                      <Play className="w-8 h-8 text-white ml-1" fill="white" />
-                    </div>
+            <div className="relative max-w-[720px] mx-auto">
+              {/* Glow behind collage */}
+              <div className="absolute inset-0 bg-gradient-to-r from-teal-500/40 to-orange-500/40 rounded-3xl blur-3xl scale-95" />
+
+              {/* Collage built from the 3 main posters we downloaded */}
+              <div className="relative grid grid-cols-2 gap-3 rounded-3xl shadow-2xl border border-gray-700/50 bg-black/60 p-3">
+                {/* Top: big sports banner spanning both columns */}
+                <div className="relative rounded-2xl overflow-hidden col-span-2">
+                  <div className="relative aspect-video">
+                    <Image
+                      src="/images/sports/hero-sports.webp"
+                      alt="Live sports in 4K"
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                 </div>
-                
-                {/* TV Stand */}
-                <div className="flex justify-center mt-4">
-                  <div className="w-24 h-2 bg-gradient-to-r from-gray-700 to-gray-600 rounded-full" />
+
+                {/* Bottom left: movies & series poster wall */}
+                <div className="relative rounded-2xl overflow-hidden">
+                  <div className="relative aspect-video">
+                    <Image
+                      src="/images/app-preview/poster-grid.webp"
+                      alt="Movies & series poster wall"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+
+                {/* Bottom right: Arabic & international poster */}
+                <div className="relative rounded-2xl overflow-hidden">
+                  <div className="relative aspect-video">
+                    <Image
+                      src="/images/movies/arabic-iptv.webp"
+                      alt="Arabic & international IPTV channels"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                 </div>
               </div>
               

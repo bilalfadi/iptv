@@ -1,6 +1,7 @@
 'use client'
 
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import { usePathname } from 'next/navigation';
 import { Language, translations } from '@/lib/translations';
 
 type LanguageContextType = {
@@ -12,33 +13,32 @@ type LanguageContextType = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en');
+  const pathname = usePathname();
+
+  const deriveLangFromPath = (): Language => {
+    if (!pathname) return 'en';
+    if (pathname.startsWith('/de')) return 'de';
+    if (pathname.startsWith('/tr')) return 'tr';
+    return 'en';
+  };
+
+  const [language, setLanguage] = useState<Language>(deriveLangFromPath);
 
   useEffect(() => {
-    // Check if language is already stored
-    const storedLang = localStorage.getItem('iptv-language') as Language;
-    if (storedLang && ['en', 'de', 'tr'].includes(storedLang)) {
-      setLanguage(storedLang);
-      return;
+    // Always derive language from URL prefix.
+    // If no /de or /tr prefix, force English so that / routes are always English.
+    const pathLang = deriveLangFromPath();
+    setLanguage(pathLang);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('iptv-language', pathLang);
     }
-
-    // Detect language from IP
-    fetch('/api/detect-language')
-      .then(res => res.json())
-      .then(data => {
-        if (data.language) {
-          setLanguage(data.language);
-          localStorage.setItem('iptv-language', data.language);
-        }
-      })
-      .catch(err => {
-        console.error('Error detecting language:', err);
-      });
-  }, []);
+  }, [pathname]);
 
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
-    localStorage.setItem('iptv-language', lang);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('iptv-language', lang);
+    }
   };
 
   return (

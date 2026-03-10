@@ -5,57 +5,104 @@ import { Check } from 'lucide-react'
 import { siteData } from '@/data/siteData'
 import { useLanguage } from './LanguageProvider'
 
+type ConnectionsTab = '1' | '2' | '3' | 'all'
+
 export default function Pricing() {
-  const [activeTab, setActiveTab] = useState<'single' | 'family'>('single')
+  const [activeConnections, setActiveConnections] = useState<ConnectionsTab>('1')
   const { t } = useLanguage()
 
+  const basePlans = siteData.pricing.singleDevice
+
+  const getPlansForConnections = (connections: ConnectionsTab) => {
+    if (connections === '1' || connections === 'all') return basePlans
+
+    const multiplier = connections === '2' ? 2 : 3
+    const discount = connections === '2' ? 0.3 : 0.5
+
+    return basePlans.map((plan: any) => {
+      const newPrice = +(plan.price * multiplier * (1 - discount)).toFixed(2)
+      const originalPrice =
+        plan.originalPrice && typeof plan.originalPrice === 'number'
+          ? +(plan.originalPrice * multiplier).toFixed(2)
+          : null
+
+      return {
+        ...plan,
+        price: newPrice,
+        originalPrice,
+      }
+    })
+  }
+
+  const displayedPlans = getPlansForConnections(activeConnections)
+
   return (
-    <section id="pricing" className="py-16 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="pricing" className="py-16 bg-[#050513]">
+      <div className="mx-auto w-full max-w-[1440px] px-3 md:px-6">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {t.pricing.title}
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             {t.pricing.description}
           </p>
         </div>
 
-        {/* Tab Switcher - Simple */}
+        {/* Connections buttons – Sonix-style (1 / 2 / 3 devices + Show All) */}
         <div className="flex justify-center mb-10">
-          <div className="bg-gray-100 p-1 rounded-lg inline-flex gap-1">
+          <div className="bg-white/10 p-1 rounded-lg inline-flex gap-1">
             <button
-              onClick={() => setActiveTab('single')}
-              className={`px-6 py-2 rounded-md font-medium text-sm transition-colors ${
-                activeTab === 'single'
+              onClick={() => setActiveConnections('1')}
+              className={`px-5 py-2 rounded-md font-medium text-xs md:text-sm transition-colors ${
+                activeConnections === '1'
                   ? 'bg-[#ff9500] text-white'
-                  : 'text-gray-700 hover:text-[#ff9500]'
+                  : 'text-gray-300 hover:text-[#ff9500]'
               }`}
             >
-              {t.pricing.singleDevice}
+              1 Device
             </button>
             <button
-              onClick={() => setActiveTab('family')}
-              className={`px-6 py-2 rounded-md font-medium text-sm transition-colors ${
-                activeTab === 'family'
+              onClick={() => setActiveConnections('2')}
+              className={`px-5 py-2 rounded-md font-medium text-xs md:text-sm transition-colors ${
+                activeConnections === '2'
                   ? 'bg-[#ff9500] text-white'
-                  : 'text-gray-700 hover:text-[#ff9500]'
+                  : 'text-gray-300 hover:text-[#ff9500]'
               }`}
             >
-              {t.pricing.familyPackage}
+              2 Devices – 30% OFF
+            </button>
+            <button
+              onClick={() => setActiveConnections('3')}
+              className={`px-5 py-2 rounded-md font-medium text-xs md:text-sm transition-colors ${
+                activeConnections === '3'
+                  ? 'bg-[#ff9500] text-white'
+                  : 'text-gray-300 hover:text-[#ff9500]'
+              }`}
+            >
+              3 Devices – 50% OFF
+            </button>
+            <button
+              onClick={() => setActiveConnections('all')}
+              className={`px-5 py-2 rounded-md font-medium text-xs md:text-sm transition-colors ${
+                activeConnections === 'all'
+                  ? 'bg-[#ff9500] text-white'
+                  : 'text-gray-300 hover:text-[#ff9500]'
+              }`}
+            >
+              Show All Plans
             </button>
           </div>
         </div>
 
         {/* Pricing Cards - Simple */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {(activeTab === 'single' ? siteData.pricing.singleDevice : siteData.pricing.familyPackage).map((plan, index) => (
+          {displayedPlans.map((plan: any, index: number) => (
             <div
               key={index}
-              className={`bg-white rounded-lg border-2 p-6 ${
+              className={`bg-white/5 rounded-lg border-2 p-6 ${
                 plan.popular 
                   ? 'border-[#ff9500]' 
-                  : 'border-gray-200'
+                  : 'border-white/20'
               }`}
             >
               {plan.popular && (
@@ -64,8 +111,8 @@ export default function Pricing() {
                 </div>
               )}
               
-              <div className="text-center mb-6 pb-6 border-b border-gray-200">
-                <div className="text-sm text-gray-500 mb-2 font-medium">{plan.duration}</div>
+              <div className="text-center mb-6 pb-6 border-b border-white/20">
+                <div className="text-sm text-gray-300 mb-2 font-medium">{plan.duration}</div>
                 <div className="flex items-baseline justify-center gap-2 mb-2">
                   <span className="text-5xl font-bold text-[#ff9500]">
                     ${plan.price}
@@ -76,9 +123,11 @@ export default function Pricing() {
                     ${plan.originalPrice}
                   </div>
                 )}
-                {'screens' in plan && plan.screens && (
+                {activeConnections !== '1' && (
                   <div className="mt-3 inline-block bg-[#ff9500]/10 text-[#ff9500] px-3 py-1 rounded-full text-sm font-semibold">
-                    Duo ({plan.screens} {t.pricing.screens})
+                    {activeConnections === '2'
+                      ? '2 Connections – approx. 30% OFF'
+                      : '3 Connections – approx. 50% OFF'}
                   </div>
                 )}
               </div>
@@ -86,14 +135,14 @@ export default function Pricing() {
               <ul className="space-y-3 mb-6">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <Check className="text-green-600 flex-shrink-0 mt-0.5" size={18} />
-                    <span className="text-gray-700 text-sm">{feature}</span>
+                    <Check className="text-green-400 flex-shrink-0 mt-0.5" size={18} />
+                    <span className="text-gray-200 text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
 
               {'guarantee' in plan && plan.guarantee && (
-                <div className="text-center text-xs text-gray-500 mb-4 bg-gray-50 py-2 px-3 rounded">
+                <div className="text-center text-xs text-gray-300 mb-4 bg-white/5 py  -2 px-3 rounded">
                   {t.pricing.guarantee}
                 </div>
               )}

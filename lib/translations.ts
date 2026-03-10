@@ -19,6 +19,31 @@ export const translations = {
       startTrial: 'Start Free Trial',
       viewPlans: 'View Plans',
     },
+    home: {
+      devices: {
+        title: '4K Xtream IPTV works everywhere you do',
+        subtitle:
+          'One 4K Xtream IPTV account follows you everywhere: TV, laptop, phone, tablet and more — any device that supports an IPTV player.',
+      },
+      movies: {
+        badge: 'Non‑stop entertainment',
+        title: 'Watch your favourite movies & series from home',
+        description:
+          'Enjoy thousands of fresh movies, complete seasons, kids shows and more. We continuously add new titles so your 4K Xtream IPTV subscription always feels new.',
+      },
+      sports: {
+        badge: 'Ultimate sports TV',
+        title: 'Live football, UFC & more in 4K',
+        description:
+          'Access premium sports channels from the UK, Europe, USA and worldwide. Watch football, UFC, boxing, NBA, cricket and more in smooth HD & 4K quality with minimal buffering.',
+      },
+      livePreview: {
+        badge: 'Live preview',
+        title: 'See how 4K Xtream IPTV looks in action',
+        description:
+          'Clean, modern IPTV interface with simple navigation for live TV, sports, movies and series. Design your own app layout and branding while using our powerful IPTV service in the background.',
+      },
+    },
     pricing: {
       title: 'Your Perfect IPTV Pricing Plans Awaits',
       description: 'Check out our 4K Xtream IPTV subscription plans, designed to match your entertainment needs.',
@@ -260,6 +285,31 @@ export const translations = {
       startTrial: 'Ücretsiz Deneme Başlat',
       viewPlans: 'Planları Görüntüle',
     },
+    home: {
+      devices: {
+        title: '4K Xtream IPTV her yerde sizinle',
+        subtitle:
+          'Tek bir 4K Xtream IPTV hesabı TV, laptop, telefon, tablet ve daha fazlasında – IPTV oynatıcı destekleyen tüm cihazlarda sizi takip eder.',
+      },
+      movies: {
+        badge: 'Durmaksızın eğlence',
+        title: 'Favori filmlerinizi ve dizilerinizi evinizden izleyin',
+        description:
+          'Binlerce yeni film, tam sezon diziler, çocuk programları ve çok daha fazlasının keyfini çıkarın. 4K Xtream IPTV aboneliğiniz her zaman yeni hissetsin diye sürekli yeni içerik ekliyoruz.',
+      },
+      sports: {
+        badge: 'En iyi spor TV deneyimi',
+        title: 'Canlı futbol, UFC ve daha fazlası 4K kalitesinde',
+        description:
+          'İngiltere, Avrupa, ABD ve dünya genelinden premium spor kanallarına erişin. Futbol, UFC, boks, NBA, kriket ve daha fazlasını minimum buffering ile akıcı HD & 4K kalitesinde izleyin.',
+      },
+      livePreview: {
+        badge: 'Canlı önizleme',
+        title: '4K Xtream IPTV’nin nasıl göründüğünü görün',
+        description:
+          'Canlı TV, spor, filmler ve diziler için basit gezinmeye sahip temiz, modern IPTV arayüzü. Güçlü IPTV altyapımız arka planda çalışırken kendi uygulama tasarımınızı ve markanızı kullanın.',
+      },
+    },
     pricing: {
       title: 'Mükemmel IPTV Fiyatlandırma Planlarınız Bekliyor',
       description: 'Eğlence ihtiyaçlarınıza uygun olarak tasarlanmış 4K Xtream IPTV abonelik planlarımıza göz atın.',
@@ -500,6 +550,31 @@ export const translations = {
       description: 'Erleben Sie Premium-TV-Streaming in kristallklarer Qualität. Greifen Sie auf Tausende von Live-Kanälen, Filmen und Serien auf jedem Gerät zu.',
       startTrial: 'Kostenlose Testversion starten',
       viewPlans: 'Pläne anzeigen',
+    },
+    home: {
+      devices: {
+        title: '4K Xtream IPTV funktioniert überall, wo Sie sind',
+        subtitle:
+          'Ein 4K Xtream IPTV Konto begleitet Sie überall: TV, Laptop, Handy, Tablet und mehr – auf jedem Gerät, das einen IPTV Player unterstützt.',
+      },
+      movies: {
+        badge: 'Non‑stop Unterhaltung',
+        title: 'Sehen Sie Ihre Lieblingsfilme & Serien bequem von zu Hause',
+        description:
+          'Genießen Sie Tausende von aktuellen Filmen, kompletten Staffeln, Kindersendungen und mehr. Wir fügen ständig neue Titel hinzu, damit sich Ihr 4K Xtream IPTV Abo immer frisch anfühlt.',
+      },
+      sports: {
+        badge: 'Ultimatives Sport-TV',
+        title: 'Live-Fußball, UFC & mehr in 4K',
+        description:
+          'Greifen Sie auf Premium-Sportkanäle aus Großbritannien, Europa, den USA und der ganzen Welt zu. Sehen Sie Fußball, UFC, Boxen, NBA, Cricket und mehr in flüssiger HD- & 4K-Qualität mit minimalem Buffering.',
+      },
+      livePreview: {
+        badge: 'Live-Vorschau',
+        title: 'Sehen Sie, wie 4K Xtream IPTV in Aktion aussieht',
+        description:
+          'Saubere, moderne IPTV-Oberfläche mit einfacher Navigation für Live-TV, Sport, Filme und Serien. Gestalten Sie Ihr eigenes App-Layout und Branding, während unser leistungsstarker IPTV-Service im Hintergrund läuft.',
+      },
     },
     pricing: {
       title: 'Ihre perfekten IPTV-Preispläne warten',

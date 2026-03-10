@@ -45,12 +45,12 @@ export default function Benefits() {
   ]
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-[#050513]">
       <div className="container mx-auto px-4">
-        {/* Header - Centered like image */}
+        {/* Header - Centered */}
         <div className="text-center mb-16">
-          <p className="text-gray-500 text-lg mb-2">{t.benefits.subtitle}</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <p className="text-teal-300 text-lg mb-2">{t.benefits.subtitle}</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             {t.benefits.title}
           </h2>
         </div>

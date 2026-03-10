@@ -17,16 +17,9 @@ export default function Features() {
   }
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
-      {/* Subtle grid pattern background */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'linear-gradient(to right, #281a4e 1px, transparent 1px), linear-gradient(to bottom, #281a4e 1px, transparent 1px)',
-          backgroundSize: '40px 40px'
-        }}></div>
-          </div>
+    <section className="py-20 bg-[#050513] relative overflow-hidden">
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="mx-auto w-full max-w-[1440px] px-3 md:px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Main Content - Left Heading/Illustration + Right Text Blocks */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
@@ -34,7 +27,7 @@ export default function Features() {
             <div className="flex flex-col">
               {/* Heading - Top Left */}
               <div className="mb-8">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#281a4e] leading-tight max-w-3xl">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight max-w-3xl">
             {t.features.title}
           </h2>
               </div>
@@ -106,11 +99,11 @@ export default function Features() {
                     className="group"
                   >
                     {/* Heading */}
-                    <h3 className="text-xl md:text-2xl font-bold text-[#281a4e] mb-3 group-hover:text-[#ff9500] transition-colors">
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-[#ff9500] transition-colors">
                   {feature.title}
                 </h3>
                     {/* Description */}
-                    <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                    <p className="text-gray-300 leading-relaxed text-sm md:text-base">
                   {feature.description}
                 </p>
               </div>

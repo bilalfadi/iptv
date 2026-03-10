@@ -1,305 +1,285 @@
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { Metadata } from 'next';
-import Image from 'next/image';
-import { Users, DollarSign, Headphones, Server, Check, ArrowRight, Star, Zap } from 'lucide-react';
-import { generateSEO } from '@/lib/seo';
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import { Metadata } from 'next'
+import { Users, DollarSign, Headphones, Server, Check, ArrowRight } from 'lucide-react'
+import { generateSEO } from '@/lib/seo'
 
 export const metadata: Metadata = generateSEO({
   title: 'IPTV Reseller Program',
-  description: 'Start your own IPTV business with 4K Xtream IPTV reseller program. Affordable entry from €250, powerful servers, 24/7 support, white-label solution, and unlimited potential.',
+  description:
+    'Become a 4K Xtream IPTV reseller. Get your own reseller panel, credits that never expire, 24/7 support and start your IPTV business today.',
   keywords: ['IPTV reseller', 'IPTV business', 'IPTV reseller program', 'reseller IPTV', 'become IPTV reseller'],
   canonical: 'https://www.4kxtreamiptv.com/iptv-reseller',
   image: '/logo.png',
   type: 'website',
-});
+})
+
+const resellerPlans = [
+  {
+    name: 'Starter Reseller',
+    credits: 120,
+    price: 300,
+    currency: 'USD',
+    badge: 'Best for New Sellers',
+    features: [
+      '120 credits included',
+      'All live TV + VOD',
+      'Credits never expire',
+      'Create unlimited trial accounts',
+      'Full access to reseller panel',
+      '24/7 technical support',
+    ],
+  },
+  {
+    name: 'Growth Reseller',
+    credits: 240,
+    price: 520,
+    currency: 'USD',
+    badge: 'Most Popular',
+    popular: true,
+    features: [
+      '240 credits included',
+      'All live TV + VOD',
+      'No credit expiration',
+      'Create unlimited trial accounts',
+      'Sub‑reseller creation available',
+      'Priority 24/7 support',
+    ],
+  },
+  {
+    name: 'Agency Reseller',
+    credits: 480,
+    price: 930,
+    currency: 'USD',
+    badge: 'For Agencies & Panels',
+    features: [
+      '480 credits included',
+      'White‑label ready',
+      'No credit expiration',
+      'Create sub‑resellers',
+      'Business consultation',
+      'Dedicated account manager',
+    ],
+  },
+]
 
 const benefits = [
   {
     icon: DollarSign,
-    title: 'Affordable Entry',
-    description: 'Start from just €250 with our reseller program. Low investment, high returns.'
+    title: 'High profit margins',
+    description: 'Buy credits once, sell subscriptions at your own price and keep 100% of the profit.',
   },
   {
     icon: Server,
-    title: 'Powerful Servers',
-    description: 'Advanced technology with best servers for unparalleled streaming quality.'
+    title: 'Stable servers',
+    description: 'Top‑tier IPTV infrastructure with high uptime and smooth 4K/HD streaming worldwide.',
   },
   {
     icon: Headphones,
-    title: '24/7 Support',
-    description: 'Dedicated support team always ready to assist you and your customers.'
+    title: '24/7 support',
+    description: 'We support you and your customers around the clock via WhatsApp and email.',
   },
   {
     icon: Users,
-    title: 'Set Your Prices',
-    description: 'Full control over your pricing. Earn 100%+ profit margins.'
-  }
-];
-
-const resellerPlans = [
-  {
-    name: 'Professional',
-    price: 250,
-    credits: 120,
-    popular: false,
-    features: [
-      '120 Credits*',
-      'Access to all live channels',
-      'Movies and TV shows included',
-      'Get your own Reseller Panel',
-      'Credits never expire',
-      '24/7 Technical support'
-    ]
+    title: 'Full control',
+    description: 'Create, renew and manage accounts yourself with our easy reseller control panel.',
   },
-  {
-    name: 'Business',
-    price: 400,
-    credits: 240,
-    popular: true,
-    features: [
-      '240 Credits*',
-      'Access to all live channels',
-      'Movies and TV shows included',
-      'Get your own Reseller Panel',
-      'Credits never expire',
-      'Priority 24/7 support',
-      'Business consultation'
-    ]
-  }
-];
+]
 
-const howItWorks = [
+const steps = [
   {
     step: '01',
-    title: 'Purchase Credits',
-    description: 'Buy a reseller package with credits to get started'
+    title: 'Choose your reseller package',
+    description: 'Pick the credits bundle that matches how many customers you want to manage.',
   },
   {
     step: '02',
-    title: 'Get Your Panel',
-    description: 'Receive access to your own reseller control panel'
+    title: 'Get your reseller panel',
+    description: 'Within minutes we activate your panel and deliver your login details.',
   },
   {
     step: '03',
-    title: 'Create Accounts',
-    description: 'Generate subscriptions for your customers using credits'
+    title: 'Create accounts & trials',
+    description: 'Use your credits to create full subscriptions and free trials for your clients.',
   },
   {
     step: '04',
-    title: 'Earn Profits',
-    description: 'Set your own prices and keep 100% of the profit'
-  }
-];
+    title: 'Grow your monthly income',
+    description: 'Set your own prices and build a stable recurring IPTV business.',
+  },
+]
 
 export default function IPTVResellerPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a1a]">
+    <main className="min-h-screen bg-white">
       <Header />
-      
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-900/50 via-[#0a0a1a] to-orange-900/30" />
-        <div className="absolute top-20 right-1/4 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-orange-500/20 rounded-full blur-3xl" />
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 bg-teal-500/20 border border-teal-500/30 rounded-full px-6 py-2 mb-8">
-                <Star className="w-5 h-5 text-teal-400" />
-                <span className="text-teal-300 font-medium">Business Opportunity</span>
-              </div>
-              
-              <h1 className="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
-                Become an IPTV
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-orange-400"> Reseller</span>
-              </h1>
-              
-              <p className="text-xl text-gray-300 mb-10 leading-relaxed">
-                Start your own IPTV business with 4K Xtream IPTV! Get your reseller panel, 
-                set your own prices, and earn profits exceeding 100%.
-              </p>
-              
-              <a 
-                href="https://wa.me/447845432224?text=Hi,%20I'm%20interested%20in%20becoming%20an%20IPTV%20reseller"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-teal-500 to-orange-500 text-white px-10 py-5 rounded-xl font-bold text-xl hover:from-teal-600 hover:to-orange-600 transition-all hover:scale-105 shadow-lg shadow-teal-500/30"
-              >
-                <Zap className="w-6 h-6" />
-                Start Your Business Today
-              </a>
-            </div>
-            
-            {/* Image */}
-            <div className="relative hidden lg:block">
-              <div className="relative w-full h-[400px]">
-                <Image
-                  src="/images/wp-content/uploads/2024/12/tv_box.png"
-                  alt="IPTV Reseller"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </div>
-          </div>
+
+      {/* Hero / Intro like Smart4k/Kebit */}
+      <section className="pt-32 pb-16 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 text-white">
+        <div className="container mx-auto px-4 max-w-5xl text-center">
+          <p className="inline-block rounded-full border border-emerald-400/40 bg-emerald-500/10 px-4 py-1 text-sm font-semibold text-emerald-300 mb-4">
+            IPTV Reseller Program
+          </p>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4">
+            Launch your own{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-orange-400">
+              4K Xtream IPTV Reseller Business
+            </span>
+          </h1>
+          <p className="text-base md:text-lg text-slate-200 max-w-3xl mx-auto mb-6">
+            Get your own reseller panel, buy credits at wholesale price and resell IPTV subscriptions under your
+            brand. No technical experience required – we handle the servers, you handle the clients.
+          </p>
+          <p className="text-sm md:text-base text-emerald-200 mb-8">
+            Stable servers • Credits never expire • 24/7 support • 4K / Full HD channels & VOD
+          </p>
+          <a
+            href="https://wa.me/447845432224?text=Hi,%20I%20want%20to%20start%20as%20an%20IPTV%20reseller"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm md:text-base font-semibold text-emerald-700 shadow-lg shadow-emerald-500/30 hover:bg-slate-100 transition"
+          >
+            Talk to us on WhatsApp
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="py-20 bg-[#0f0f23]">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">
-              Why Become a Reseller?
-            </h2>
-            <p className="text-gray-400 text-lg">Lucrative opportunity with minimal investment</p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {benefits.map((benefit, index) => (
-              <div 
-                key={index}
-                className="bg-gradient-to-br from-[#1a1a2e] to-[#16162a] border border-gray-800 rounded-2xl p-8 text-center hover:border-teal-500/50 transition-all group"
+      {/* Benefits row like their intro blocks */}
+      <section className="py-12 bg-slate-50 border-b border-slate-200">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {benefits.map((item, idx) => (
+              <div
+                key={idx}
+                className="rounded-2xl bg-white border border-slate-200/80 p-5 shadow-sm hover:shadow-md transition"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-lg">
-                  <benefit.icon className="w-8 h-8 text-white" />
+                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-500">
+                  <item.icon className="h-5 w-5" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
-                <p className="text-gray-400">{benefit.description}</p>
+                <h3 className="text-base font-semibold text-slate-900 mb-1">{item.title}</h3>
+                <p className="text-sm text-slate-600">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-20 bg-[#0a0a1a]">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">
-              How It Works
-            </h2>
-            <p className="text-gray-400 text-lg">Simple steps to start earning</p>
+      {/* Reseller plans – 3 cards, same style idea as Smart4k/Kebit/Xtream */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Choose your reseller package</h2>
+            <p className="text-sm md:text-base text-slate-600">
+              Credits never expire. Use them for monthly, 3‑month, 6‑month or 12‑month subscriptions.
+            </p>
           </div>
-          
-          <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            {howItWorks.map((item, index) => (
-              <div key={index} className="relative text-center">
-                {index < howItWorks.length - 1 && (
-                  <div className="hidden md:block absolute top-12 left-1/2 w-full h-0.5 bg-gradient-to-r from-teal-500 to-transparent" />
-                )}
-                <div className="relative">
-                  <div className="w-24 h-24 bg-gradient-to-br from-teal-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-teal-500/30">
-                    <span className="text-3xl font-black text-white">{item.step}</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                  <p className="text-gray-400">{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Pricing Plans */}
-      <section className="py-20 bg-[#0f0f23]">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">
-              Reseller Packages
-            </h2>
-            <p className="text-gray-400 text-lg">Choose the package that fits your business goals</p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {resellerPlans.map((plan, index) => (
-              <div 
-                key={index}
-                className={`relative rounded-3xl p-8 ${
-                  plan.popular 
-                    ? 'bg-gradient-to-br from-teal-500 to-orange-500 shadow-2xl shadow-teal-500/30 scale-105' 
-                    : 'bg-gradient-to-br from-[#1a1a2e] to-[#16162a] border border-gray-800'
+          <div className="grid gap-7 md:grid-cols-3">
+            {resellerPlans.map((plan, idx) => (
+              <div
+                key={idx}
+                className={`relative flex h-full flex-col rounded-3xl border p-6 md:p-7 ${
+                  plan.popular
+                    ? 'border-emerald-500/70 shadow-xl shadow-emerald-500/20 bg-gradient-to-b from-emerald-50 to-white scale-[1.02]'
+                    : 'border-slate-200 bg-white shadow-sm'
                 }`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <div className="bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-sm font-bold">
-                      RECOMMENDED
-                    </div>
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-emerald-500 px-4 py-1 text-xs font-semibold text-white shadow">
+                    Most Popular
                   </div>
                 )}
-                
-                <div className="text-center mb-8">
-                  <h3 className={`text-2xl font-bold mb-2 ${plan.popular ? 'text-white' : 'text-teal-300'}`}>
-                    {plan.name}
-                  </h3>
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span className={`text-5xl font-black ${plan.popular ? 'text-white' : 'text-white'}`}>
-                      €{plan.price}
-                    </span>
-                  </div>
-                  <p className={`mt-2 ${plan.popular ? 'text-white/80' : 'text-gray-400'}`}>
-                    {plan.credits} Credits Included
-                  </p>
+                <div className="mb-5">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-emerald-500">{plan.badge}</p>
+                  <h3 className="mt-1 text-lg font-bold text-slate-900">{plan.name}</h3>
                 </div>
-                
-                <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-3">
-                      <Check className={`w-5 h-5 flex-shrink-0 ${plan.popular ? 'text-white' : 'text-teal-400'}`} />
-                      <span className={plan.popular ? 'text-white/90' : 'text-gray-300'}>
-                        {feature}
-                      </span>
+                <div className="mb-5 flex items-baseline gap-1">
+                  <span className="text-3xl md:text-4xl font-black text-slate-900">
+                    ${plan.price.toLocaleString()}
+                  </span>
+                  <span className="text-xs text-slate-500 uppercase font-semibold">/ one time</span>
+                </div>
+                <p className="mb-4 text-sm font-medium text-emerald-600">{plan.credits} credits included</p>
+                <ul className="mb-6 space-y-2 text-sm text-slate-700">
+                  {plan.features.map((feature, i) => (
+                    <li key={i} className="flex gap-2">
+                      <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-500" />
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
-                
-                <a 
-                  href="https://wa.me/447845432224"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`block w-full py-4 rounded-xl font-bold text-center transition-all ${
-                    plan.popular 
-                      ? 'bg-white text-teal-600 hover:bg-gray-100' 
-                      : 'bg-gradient-to-r from-teal-500 to-orange-500 text-white hover:from-teal-600 hover:to-orange-600'
-                  }`}
-                >
-                  Contact Now
-                </a>
+                <div className="mt-auto">
+                  <a
+                    href="https://wa.me/447845432224?text=Hi,%20I%20want%20to%20order%20an%20IPTV%20reseller%20package"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex w-full items-center justify-center rounded-full px-4 py-3 text-sm font-semibold transition ${
+                      plan.popular
+                        ? 'bg-emerald-600 text-white hover:bg-emerald-700'
+                        : 'bg-slate-900 text-white hover:bg-slate-800'
+                    }`}
+                  >
+                    Order this package
+                  </a>
+                </div>
               </div>
             ))}
           </div>
-          
-          <p className="text-center text-gray-500 mt-8 text-sm">
-            * 1 credit = 1 month subscription. Credits never expire.
+
+          <p className="mt-6 text-center text-xs text-slate-500">
+            1 credit = 1 month subscription. Example: 12 months = 1 credit, 6 months = 0.5 credit, 3 months = 0.25
+            credit, 1 month = 0.1 credit. Credits never expire.
           </p>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-teal-600 to-orange-500">
+      {/* How it works – simple 4 steps line like Xtream text section */}
+      <section className="py-16 bg-slate-950">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">How our reseller system works</h2>
+            <p className="text-sm md:text-base text-slate-300">
+              Same simple process as other top IPTV providers – just with 4K Xtream quality and support.
+            </p>
+          </div>
+          <div className="grid gap-7 md:grid-cols-4">
+            {steps.map((item) => (
+              <div key={item.step} className="text-center">
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-400/40">
+                  <span className="text-sm font-bold">{item.step}</span>
+                </div>
+                <h3 className="mb-2 text-sm font-semibold text-white">{item.title}</h3>
+                <p className="text-xs text-slate-300">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA strip like they have at bottom */}
+      <section className="py-14 bg-gradient-to-r from-emerald-600 to-orange-500">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            Ready to Start Your IPTV Business?
+          <h2 className="text-2xl md:text-3xl font-black text-white mb-3">
+            Ready to start your IPTV reseller business?
           </h2>
-          <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Join our successful network of resellers and start earning today!
+          <p className="text-sm md:text-base text-white/90 mb-6 max-w-2xl mx-auto">
+            Message us now and we will set up your reseller panel, explain how credits work and help you close your
+            first clients.
           </p>
-          <a 
-            href="https://wa.me/447845432224"
+          <a
+            href="https://wa.me/447845432224?text=Hi,%20I%20want%20to%20start%20your%20IPTV%20reseller%20program"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-white text-teal-600 px-10 py-5 rounded-xl font-bold text-xl hover:bg-gray-100 transition-all"
+            className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3 text-sm md:text-base font-semibold text-emerald-700 shadow-lg hover:bg-slate-100 transition"
           >
-            Get Started Now
-            <ArrowRight className="w-6 h-6" />
+            Start now on WhatsApp
+            <ArrowRight className="h-4 w-4" />
           </a>
         </div>
       </section>
 
       <Footer />
     </main>
-  );
+  )
 }
