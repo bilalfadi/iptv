@@ -59,17 +59,17 @@ export default function Header() {
       {/* Main Navigation */}
       <nav className="container mx-auto px-4 py-4 bg-white">
         <div className="flex items-center justify-between">
-          {/* Logo – load directly from live site to avoid Next.js image optimizer error on /logo.png */}
+          {/* Logo – served from local apple-touch icon in /public */}
           <Link href={`${basePrefix}/`} className="flex items-center gap-3">
             <img
-              src="https://www.4kxtreamiptv.com/logo.png"
+              src="/apple-touch-icon.png"
               alt="4K Xtream IPTV Logo"
               className="h-[43px] w-auto"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-6 mr-4">
             <Link
               href={`${basePrefix}/`}
               className={`font-medium transition-colors text-[#ff9500]`}
@@ -102,20 +102,7 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Help Line with Icon */}
-          <div className="hidden md:flex items-center gap-2">
-            <div className="flex items-center gap-2">
-              <div className="bg-white rounded-full p-2 shadow-md">
-                <Headphones className="text-[#ff9500]" size={20} />
-              </div>
-              <div>
-                <div className="text-xs text-gray-600 font-medium">Help line</div>
-                <a href={`tel:${siteData.company.phone}`} className="text-sm font-bold text-gray-800 hover:text-[#ff9500] transition">
-                  {siteData.company.phone}
-                </a>
-              </div>
-            </div>
-          </div>
+          {/* Help Line removed from header as requested */}
 
           {/* Mobile Menu Button */}
           <button

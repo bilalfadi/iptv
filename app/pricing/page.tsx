@@ -18,7 +18,7 @@ export const metadata: Metadata = generateSEO({
 const singleDevicePlans = [
   {
     duration: '1 Month',
-    price: 10,
+    price: 14,
     popular: false,
     features: [
       '24/7 support / live chat support',

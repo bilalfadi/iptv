@@ -14,33 +14,39 @@ export default function InstallationTutorialPage() {
     {
       name: 'Amazon Firestick',
       icon: '/images/wp-content/uploads/2025/01/iptv-firestick-qx1f3peovpr9xz66946upl1xh75ycmjfm7hci7qhg0.webp',
-      description: 'Fire TV Stick, Fire TV Cube, Fire TV'
+      description: 'Fire TV Stick, Fire TV Cube, Fire TV',
+      anchorId: 'firestick-guide',
     },
     {
       name: 'Android TV & Box',
       icon: '/images/wp-content/uploads/2025/01/Android-TV-Android-phones-Android-Box.webp',
-      description: 'Android TV, Nvidia Shield, Mi Box'
+      description: 'Android TV, Nvidia Shield, Mi Box',
+      anchorId: 'android-tv-guide',
     },
     {
       name: 'Smart TV',
       icon: '/images/wp-content/uploads/2024/12/tv_box.png',
-      description: 'Samsung, LG, Sony, TCL, Hisense'
+      description: 'Samsung, LG, Sony, TCL, Hisense',
+      anchorId: 'smart-tv-guide',
     },
     {
       name: 'iOS Devices',
       icon: '/images/wp-content/uploads/2025/01/iptv_ios-qx1e1gd4144cifu5yqfph38mlb68wzr8hszwr05wmw.webp',
-      description: 'iPhone, iPad, Apple TV'
+      description: 'iPhone, iPad, Apple TV',
+      anchorId: 'ios-guide',
     },
     {
       name: 'Windows PC',
       icon: '/images/wp-content/uploads/2025/01/iptv-pc-qx1ef30vuy1vtoxp0z1nwaq9auitq1sjwcagya8qfk.webp',
-      description: 'Windows 10, Windows 11'
+      description: 'Windows 10, Windows 11',
+      anchorId: 'windows-guide',
     },
     {
       name: 'MAG Box',
       icon: '/images/wp-content/uploads/2024/12/tv_box.png',
-      description: 'MAG 250, 254, 322, 324, 420, 424'
-    }
+      description: 'MAG 250, 254, 322, 324, 420, 424',
+      anchorId: 'mag-box-guide',
+    },
   ];
 
   const apps = [
@@ -167,10 +173,15 @@ export default function InstallationTutorialPage() {
                     <p className="text-gray-400 text-sm">{device.description}</p>
                   </div>
                 </div>
-                <div className="flex items-center text-teal-400 font-medium group-hover:text-orange-400">
-                  <span>View Guide</span>
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </div>
+                {device.anchorId && (
+                  <a
+                    href={`#${device.anchorId}`}
+                    className="flex items-center text-teal-400 font-medium group-hover:text-orange-400"
+                  >
+                    <span>View Guide</span>
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                )}
               </div>
             ))}
           </div>
@@ -213,6 +224,81 @@ export default function InstallationTutorialPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Detailed device guides */}
+      <section className="py-20 bg-[#0a0a1a]">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-3">Step-by-step installation guides</h2>
+            <p className="text-gray-400 text-sm md:text-base max-w-3xl mx-auto">
+              Follow these simple steps for your device. After you receive your IPTV line from us, just enter the
+              username, password and server URL exactly as we send them.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-10 text-gray-300 text-sm md:text-base">
+            <div id="firestick-guide">
+              <h3 className="text-xl font-semibold text-white mb-3">Amazon Firestick / Fire TV – IPTV Smarters Pro</h3>
+              <ol className="list-decimal list-inside space-y-2">
+                <li>From the Firestick home go to <strong>Find → Search</strong> and type “IPTV Smarters Pro”.</li>
+                <li>Install the app and open it, then choose <strong>Login with Xtream Codes API</strong>.</li>
+                <li>Enter the <strong>username, password and server URL</strong> that we send you.</li>
+                <li>Click <strong>Add User</strong>, wait for channels to load and start watching.</li>
+              </ol>
+            </div>
+
+            <div id="android-tv-guide">
+              <h3 className="text-xl font-semibold text-white mb-3">Android TV / Android Box – TiviMate</h3>
+              <ol className="list-decimal list-inside space-y-2">
+                <li>Open the <strong>Google Play Store</strong> on your Android TV / box.</li>
+                <li>Search and install <strong>TiviMate IPTV Player</strong>.</li>
+                <li>Open TiviMate → <strong>Add playlist</strong> → choose M3U or Xtream Codes.</li>
+                <li>Paste the M3U link or Xtream details we provide and save.</li>
+              </ol>
+            </div>
+
+            <div id="smart-tv-guide">
+              <h3 className="text-xl font-semibold text-white mb-3">Samsung / LG / other Smart TV</h3>
+              <ol className="list-decimal list-inside space-y-2">
+                <li>Open your TV&apos;s <strong>App Store</strong> (Samsung / LG Content Store).</li>
+                <li>Install any IPTV player you like (Smart IPTV, Flix IPTV, DuplexPlay, etc.).</li>
+                <li>Open the app and note the <strong>MAC address or Device ID</strong>.</li>
+                <li>Send us that MAC / ID on WhatsApp so we can link your subscription.</li>
+              </ol>
+            </div>
+
+            <div id="ios-guide">
+              <h3 className="text-xl font-semibold text-white mb-3">iPhone / iPad / Apple TV</h3>
+              <ol className="list-decimal list-inside space-y-2">
+                <li>Open the <strong>App Store</strong> and install an IPTV player (IPTV Smarters, GSE IPTV, etc.).</li>
+                <li>Inside the app choose <strong>Add new playlist / Xtream Codes</strong>.</li>
+                <li>Enter the IPTV username, password and server URL we send you and save.</li>
+              </ol>
+            </div>
+
+            <div id="windows-guide">
+              <h3 className="text-xl font-semibold text-white mb-3">Windows PC / Laptop</h3>
+              <ol className="list-decimal list-inside space-y-2">
+                <li>Install <strong>VLC Media Player</strong> or any Windows IPTV app.</li>
+                <li>In VLC go to <strong>Media → Open Network Stream</strong>.</li>
+                <li>Paste your M3U URL and click <strong>Play</strong> to start streaming.</li>
+              </ol>
+            </div>
+
+            <div id="mag-box-guide">
+              <h3 className="text-xl font-semibold text-white mb-3">MAG Box (Portal URL)</h3>
+              <ol className="list-decimal list-inside space-y-2">
+                <li>
+                  On MAG go to <strong>Settings → System settings → Servers → Portals</strong> and open{' '}
+                  <strong>Portal 1</strong>.
+                </li>
+                <li>Paste the <strong>portal URL</strong> we send you and give it any name (e.g. 4K Xtream IPTV).</li>
+                <li>Save and reboot the box – the portal will load your channels and VOD.</li>
+              </ol>
+            </div>
           </div>
         </div>
       </section>

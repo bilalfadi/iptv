@@ -50,7 +50,7 @@ export const siteData = {
     singleDevice: [
       {
         duration: "1 Month",
-        price: 10,
+        price: 14,
         originalPrice: 29,
         features: [
           "24/7 support / live chat support",
