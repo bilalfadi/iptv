@@ -106,69 +106,69 @@ export default function InstallationTutorialPage() {
           {activeTab === 'firestick' && (
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
-                How to setup IPTV on Fire TV Stick
+                Set up 4K Xtream IPTV on Fire TV Stick
               </h2>
 
               <StepBlock
                 step={1}
-                text="From the home screen of your device, hover over the Find option."
+                text="On the Fire TV home screen, move to the Find menu."
                 image={IMG('2024/02/firestick1.webp')}
               />
               <StepBlock
                 step={2}
-                text="Now click on Search."
+                text="Select Search."
                 image={IMG('2024/02/fire-2.png')}
               />
               <StepBlock
                 step={3}
-                text="Search for and select Downloader."
+                text="In the search bar, look up Downloader and open it."
                 image={IMG('2024/02/fire3.png')}
               />
               <StepBlock
                 step={4}
-                text="Choose the Downloader app."
+                text="Pick the official Downloader app from the results."
                 image={IMG('2024/02/fire4.png')}
               />
-              <StepBlock step={5} text="Click Download." image={IMG('2024/02/fre5.webp')} />
+              <StepBlock step={5} text="Tap Download to install the app." image={IMG('2024/02/fre5.webp')} />
               <StepBlock
                 step={6}
-                text="Once the app finishes installing click Open."
+                text="When installation is done, tap Open."
                 image={IMG('2024/02/fi7.webp')}
               />
               <StepBlock
                 step={7}
-                text="Return to the home screen and open Settings."
+                text="Go back to the home screen and open Settings."
                 image={IMG('2024/02/fi8.webp')}
               />
-              <StepBlock step={8} text="Click My Fire TV." image={IMG('2024/02/fire8.webp')} />
+              <StepBlock step={8} text="Select My Fire TV." image={IMG('2024/02/fire8.webp')} />
               <StepBlock
                 step={9}
-                text="Choose Developer options."
+                text="Open Developer options."
                 image={IMG('2024/02/fire9.webp')}
               />
               <StepBlock
                 step={10}
-                text="Click Install unknown apps."
+                text="Select Install unknown apps."
                 image={IMG('2024/02/10.webp')}
               />
               <StepBlock
                 step={11}
-                text="Find the Downloader app and click it."
+                text="Find Downloader in the list and tap it."
                 image={IMG('2024/02/11.webp')}
               />
               <StepBlock
                 step={12}
-                text="Turn Unknown Sources to On for the Downloader app. This enables side-loading on your device."
+                text="Switch Unknown Sources to On for Downloader so you can install apps from outside the store."
                 image={IMG('2024/02/12.webp')}
               />
-              <StepBlock step={13} text="Launch Downloader." image={IMG('2024/02/13.webp')} />
-              <StepBlock step={14} text="Click Allow." image={IMG('2024/02/14.webp')} />
-              <StepBlock step={15} text="Click OK." image={IMG('2024/02/155.webp')} />
+              <StepBlock step={13} text="Open the Downloader app." image={IMG('2024/02/13.webp')} />
+              <StepBlock step={14} text="When asked for permission, tap Allow." image={IMG('2024/02/14.webp')} />
+              <StepBlock step={15} text="Tap OK to continue." image={IMG('2024/02/155.webp')} />
               <StepBlock
                 step={16}
                 text={
                   <>
-                    Type this URL in Downloader:{' '}
+                    In the URL bar, paste the IPTV Smarters download link and tap Go:{' '}
                     <a
                       href="https://www.iptvsmarters.com/smarters.apk"
                       target="_blank"
@@ -176,32 +176,31 @@ export default function InstallationTutorialPage() {
                       className="text-teal-400 underline"
                     >
                       https://www.iptvsmarters.com/smarters.apk
-                    </a>{' '}
-                    and click Go.
+                    </a>
                   </>
                 }
                 image={IMG('2024/02/16.webp')}
               />
-              <StepBlock step={17} text="Wait for file to download." image={IMG('2024/02/17.webp')} />
-              <StepBlock step={18} text="Click Install." image={IMG('2024/02/18.webp')} />
-              <StepBlock step={19} text="Click Done." image={IMG('2024/02/19.webp')} />
+              <StepBlock step={17} text="Let the APK file finish downloading." image={IMG('2024/02/17.webp')} />
+              <StepBlock step={18} text="Tap Install to install IPTV Smarters." image={IMG('2024/02/18.webp')} />
+              <StepBlock step={19} text="When done, tap Done." image={IMG('2024/02/19.webp')} />
               <StepBlock
                 step={20}
-                text="Open IPTV Smarters then select Login with Xtream codes API."
+                text="Open IPTV Smarters and choose Login with Xtream Codes API."
               />
               <StepBlock
                 step={21}
-                text="Enter the login details that we sent you via WhatsApp or Email."
+                text="Enter the username, password and server URL we sent you on WhatsApp or by email."
               />
 
               <h2 className="text-2xl font-bold text-white mt-14 mb-6">
-                How to setup IPTV with TiviMate (Fire TV Stick)
+                Alternative: Set up with TiviMate on Fire TV Stick
               </h2>
               <StepBlock
                 step={1}
                 text={
                   <>
-                    In Downloader, type:{' '}
+                    In Downloader, paste the TiviMate download link and tap Go:{' '}
                     <a
                       href="https://tivimates.com/tiviapk"
                       target="_blank"
@@ -209,24 +208,23 @@ export default function InstallationTutorialPage() {
                       className="text-teal-400 underline"
                     >
                       https://tivimates.com/tiviapk
-                    </a>{' '}
-                    and click Go.
+                    </a>
                   </>
                 }
                 image={IMG('2024/02/TV1.webp')}
               />
-              <StepBlock step={2} text="Wait for file to download." image={IMG('2024/02/a.webp')} />
+              <StepBlock step={2} text="Wait for the file to finish downloading." image={IMG('2024/02/a.webp')} />
               <StepBlock
                 step={3}
-                text="Click Install and once finished you can open the app."
+                text="Tap Install, then open the app when installation is complete."
               />
               <StepBlock
                 step={4}
-                text='Click "Add Playlist" then choose "Xtream codes".'
+                text='Tap Add Playlist and select Xtream Codes.'
               />
               <StepBlock
                 step={5}
-                text="Enter the login details that we sent you via WhatsApp or Email."
+                text="Enter the credentials we sent you via WhatsApp or email."
               />
             </div>
           )}
@@ -235,13 +233,13 @@ export default function InstallationTutorialPage() {
           {activeTab === 'android' && (
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
-                How to setup IPTV on Android with IPTV Smarters Player
+                Set up 4K Xtream IPTV on Android with IPTV Smarters
               </h2>
               <StepBlock
                 step={1}
                 text={
                   <>
-                    Download the IPTV Smarters app from:{' '}
+                    Install the IPTV Smarters app using this link:{' '}
                     <a
                       href="https://www.iptvsmarters.com/smarters.apk"
                       target="_blank"
@@ -255,23 +253,23 @@ export default function InstallationTutorialPage() {
               />
               <StepBlock
                 step={2}
-                text="Open the app once downloaded and enter the login details."
+                text="Open the app and go to the login screen."
               />
               <StepBlock
                 step={3}
-                text="Enter the username, password and server URL we provided after your subscription."
+                text="Enter the username, password and server URL we gave you with your subscription."
                 image={IMG('2024/03/an1.webp')}
               />
-              <StepBlock step={4} text="Click ADD USER and wait a few seconds." image={IMG('2024/03/an2.webp')} />
+              <StepBlock step={4} text="Tap Add User and wait for your playlist to load." image={IMG('2024/03/an2.webp')} />
               <StepBlock
                 step={5}
-                text="Select the channel group you want to watch and proceed."
+                text="Pick the channel group you want and continue."
               />
               <StepBlock
                 step={6}
-                text="Click on a channel name, then double-tap the video to go full screen."
+                text="Select a channel, then double-tap the video to switch to full screen."
               />
-              <StepBlock step={7} text="Done. You can start watching." />
+              <StepBlock step={7} text="You’re all set—start watching your channels." />
             </div>
           )}
 
@@ -279,13 +277,13 @@ export default function InstallationTutorialPage() {
           {activeTab === 'apple' && (
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
-                How to setup IPTV on Apple / iOS with IPTV Smarters Player
+                Set up 4K Xtream IPTV on iPhone & iPad with IPTV Smarters
               </h2>
               <StepBlock
                 step={1}
                 text={
                   <>
-                    Download IPTV Smarters from the App Store:{' '}
+                    Install Smarters Player Lite from the App Store:{' '}
                     <a
                       href="https://apps.apple.com/in/app/smarters-player-lite/id1628995509"
                       target="_blank"
@@ -294,27 +292,27 @@ export default function InstallationTutorialPage() {
                     >
                       Smarters Player Lite
                     </a>{' '}
-                    or search for it in the App Store and install.
+                    (or search for it in the App Store).
                   </>
                 }
               />
-              <StepBlock step={2} text="Open the app and click ADD USER to proceed." />
+              <StepBlock step={2} text="Open the app and tap Add User to continue." />
               <StepBlock
                 step={3}
-                text="Enter the login details we provided after your subscription."
+                text="Enter the username, password and server URL we sent with your subscription."
                 image={IMG('2024/03/an1.webp')}
               />
-              <StepBlock step={4} text="Wait a few seconds for channels to load." image={IMG('2024/03/an2.webp')} />
-              <StepBlock step={5} text="Select the channel group you want to watch." />
+              <StepBlock step={4} text="Wait a few seconds for your channels to load." image={IMG('2024/03/an2.webp')} />
+              <StepBlock step={5} text="Pick the channel group you want to watch." />
               <StepBlock
                 step={6}
-                text="Tap a channel, then double-tap the video for full screen."
+                text="Tap a channel, then double-tap the video to view in full screen."
               />
               <StepBlock
                 step={7}
-                text='To add EPG, just click "Install EPG" – no EPG URL needed.'
+                text='For the programme guide, tap Install EPG (no separate EPG URL needed).'
               />
-              <StepBlock step={8} text="Done." />
+              <StepBlock step={8} text="Setup complete—enjoy your channels." />
             </div>
           )}
 
@@ -322,22 +320,22 @@ export default function InstallationTutorialPage() {
           {activeTab === 'smarttv' && (
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
-                How to Install IPTV Smarters Pro on Smart TV
+                Install 4K Xtream IPTV on Smart TV with IPTV Smarters Pro
               </h2>
               <p className="text-gray-300 mb-6">
-                IPTV Smarters is a video streaming player for watching live TV, VOD, series and
-                catch-up on your Smart TV. It is easy to use and works on compatible devices.
+                IPTV Smarters Pro lets you watch live TV, movies, series and catch-up on your Smart TV
+                with a simple interface. It works on many compatible Samsung, LG and other Smart TV models.
               </p>
               <p className="text-gray-300 mb-8">
-                <strong className="text-white">Compatibility:</strong> Works on many Smart TV brands
-                and set-top boxes.
+                <strong className="text-white">Compatibility:</strong> Supported on most popular Smart TV
+                brands and Android TV boxes.
               </p>
-              <h3 className="text-xl font-bold text-white mb-4">How it works</h3>
+              <h3 className="text-xl font-bold text-white mb-4">General steps</h3>
               <StepBlock
                 step={1}
                 text={
                   <>
-                    Search for IPTV Smarters Pro in your TV app store, or download the APK from:{' '}
+                    Find IPTV Smarters Pro in your TV’s app store, or install via APK from:{' '}
                     <a
                       href="https://www.iptvsmarters.com/smarters.apk"
                       target="_blank"
@@ -351,16 +349,16 @@ export default function InstallationTutorialPage() {
               />
               <StepBlock
                 step={2}
-                text="Log in with your subscription details: Username, Password and Portal URL."
+                text="Sign in with the username, password and portal URL we sent you."
               />
               <h3 className="text-xl font-bold text-white mt-10 mb-4">Samsung Smart TV</h3>
               <StepBlock step={1} text="Press the Smart Hub button on your remote." />
-              <StepBlock step={2} text="Search for IPTV Smarters Pro and install it." />
-              <StepBlock step={3} text="Log in with your Username, Password and Portal URL." />
+              <StepBlock step={2} text="Search for IPTV Smarters Pro in the store and install it." />
+              <StepBlock step={3} text="Open the app and sign in with your 4K Xtream IPTV credentials." />
               <h3 className="text-xl font-bold text-white mt-10 mb-4">LG Smart TV</h3>
-              <StepBlock step={1} text="Press Home on the remote and go to LG Content Store." />
+              <StepBlock step={1} text="Press Home on the remote and open LG Content Store." />
               <StepBlock step={2} text="Search for IPTV Smarters Pro and install it." />
-              <StepBlock step={3} text="Log in with your Username, Password and Portal URL." />
+              <StepBlock step={3} text="Open the app and sign in with your 4K Xtream IPTV credentials." />
             </div>
           )}
 
@@ -368,13 +366,13 @@ export default function InstallationTutorialPage() {
           {activeTab === 'windows' && (
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
-                Windows Method
+                Set up 4K Xtream IPTV on Windows
               </h2>
               <StepBlock
                 step={1}
                 text={
                   <>
-                    Download IPTV Smarters for Windows:{' '}
+                    Get the IPTV Smarters desktop app for Windows here:{' '}
                     <a
                       href="https://www.iptvsmarters.com/download?download=windows"
                       target="_blank"
@@ -383,15 +381,16 @@ export default function InstallationTutorialPage() {
                     >
                       https://www.iptvsmarters.com/download?download=windows
                     </a>
+                    . Install it, then open the app and enter the credentials we sent you.
                   </>
                 }
               />
-              <h2 className="text-2xl font-bold text-white mt-14 mb-6">MAC Method</h2>
+              <h2 className="text-2xl font-bold text-white mt-14 mb-6">Set up 4K Xtream IPTV on Mac</h2>
               <StepBlock
                 step={1}
                 text={
                   <>
-                    Download IPTV Smarters for Mac:{' '}
+                    Download IPTV Smarters for Mac from:{' '}
                     <a
                       href="https://www.iptvsmarters.com/download?download=mac"
                       target="_blank"
@@ -400,6 +399,7 @@ export default function InstallationTutorialPage() {
                     >
                       https://www.iptvsmarters.com/download?download=mac
                     </a>
+                    . Install and open the app, then sign in with the details we sent you.
                   </>
                 }
               />
@@ -410,37 +410,37 @@ export default function InstallationTutorialPage() {
           {activeTab === 'mag' && (
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
-                How to setup IPTV on Mag Box
+                Set up 4K Xtream IPTV on MAG Box
               </h2>
               <p className="text-gray-300 mb-8">
-                This guide walks you through setting up your MAG (250, 254, 256, etc.) with our
-                service.
+                Follow these steps to connect your MAG (250, 254, 256, 322, etc.) to 4K Xtream IPTV.
+                You’ll need the portal URL we send you after we activate your MAG using its MAC address.
               </p>
               <StepBlock
                 step={1}
-                text='When the box is loaded, open the main portal screen, then go to "Settings" and press SETUP/SET on the remote.'
+                text="From the main portal screen, open Settings and press SETUP/SET on the remote."
                 image={IMG('2024/03/ma1.png')}
               />
               <StepBlock
                 step={2}
-                text='Open "System settings" and click "Servers".'
+                text="Go to System settings, then open Servers."
                 image={IMG('2024/03/ma2.png')}
               />
-              <StepBlock step={3} text="Click on Servers." image={IMG('2024/03/ma3.png')} />
+              <StepBlock step={3} text="Select Servers." image={IMG('2024/03/ma3.png')} />
               <StepBlock step={4} text="Choose Portals." image={IMG('2024/03/ma4.png')} />
               <StepBlock
                 step={5}
-                text="In Portal 1 name enter a name (e.g. 4K Xtream IPTV). In Portal 1 URL enter the portal URL we sent you."
+                text="In Portal 1 name type a label (e.g. 4K Xtream IPTV). In Portal 1 URL paste the portal link we sent you."
                 image={IMG('2024/03/ma5.jpg')}
               />
               <p className="text-gray-300 mb-6">
-                For activation we need the <strong className="text-white">MAC address</strong> from
-                the label on the back of your MAG box. After activation we send you the portal URL
-                to enter here.
+                We need the <strong className="text-white">MAC address</strong> from the sticker on the
+                back of your MAG box to activate your line. Once activated, we’ll send you the portal
+                URL to enter in the step above.
               </p>
-              <StepBlock step={6} text="Select OK to save the changes." />
-              <StepBlock step={7} text="Press EXIT on the remote after settings are saved." />
-              <StepBlock step={8} text="Reboot the box when prompted (OK) so the portal loads." />
+              <StepBlock step={6} text="Press OK to save your portal settings." />
+              <StepBlock step={7} text="Press EXIT on the remote to leave the menu." />
+              <StepBlock step={8} text="Reboot the box when asked so the new portal loads correctly." />
             </div>
           )}
         </div>
