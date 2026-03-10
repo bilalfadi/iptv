@@ -26,7 +26,7 @@ export async function GET() {
 
     const uniquePosts = Array.from(uniquePostsMap.values());
 
-    const baseUrl = 'https://4kxtreamiptv.com';
+    const baseUrl = 'https://www.4kxtreamiptv.com';
     const urlEntries = uniquePosts.map((post: any) => {
       const lastmod = post.modified ? new Date(post.modified).toISOString() : new Date(post.date).toISOString();
       const url = post.link || `${baseUrl}/${post.slug}/`;

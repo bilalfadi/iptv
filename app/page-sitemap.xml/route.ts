@@ -29,7 +29,7 @@ export async function GET() {
 
     const uniquePages = Array.from(uniquePagesMap.values());
 
-    const baseUrl = 'https://4kxtreamiptv.com';
+    const baseUrl = 'https://www.4kxtreamiptv.com';
     const urlEntries = uniquePages.map((page: any) => {
       const lastmod = page.modified ? new Date(page.modified).toISOString() : new Date(page.date).toISOString();
       const url = page.link || `${baseUrl}/${page.slug}/`;

@@ -6,7 +6,7 @@ export const metadata: Metadata = generateSEO({
   title: 'FAQs - Frequently Asked Questions',
   description: 'Find answers to frequently asked questions about IPTV service, subscription, installation, compatibility, and support. Get help with common IPTV issues.',
   keywords: ['IPTV FAQ', 'IPTV questions', 'IPTV help', 'IPTV support', 'IPTV guide'],
-  canonical: 'https://4kxtreamiptv.com/faqs',
+  canonical: 'https://www.4kxtreamiptv.com/faqs',
   image: '/logo.png',
   type: 'website',
 });

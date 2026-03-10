@@ -21,8 +21,8 @@ export interface SEOConfig {
   nofollow?: boolean;
 }
 
-const defaultImage = 'https://4kxtreamiptv.com/logo.png';
-const siteUrl = 'https://4kxtreamiptv.com';
+const defaultImage = 'https://www.4kxtreamiptv.com/logo.png';
+const siteUrl = 'https://www.4kxtreamiptv.com';
 const siteName = '4K Xtream IPTV';
 const defaultKeywords = [
   'IPTV',

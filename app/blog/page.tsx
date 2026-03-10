@@ -11,7 +11,7 @@ export const metadata: Metadata = generateSEO({
   title: 'Blog - IPTV News & Updates',
   description: 'Stay updated with the latest IPTV news, tips, guides, tutorials, and updates from 4K Xtream IPTV. Learn about IPTV setup, best practices, and streaming tips.',
   keywords: ['IPTV blog', 'IPTV news', 'IPTV tips', 'IPTV guides', 'streaming tutorials'],
-  canonical: 'https://4kxtreamiptv.com/blog',
+  canonical: 'https://www.4kxtreamiptv.com/blog',
   image: '/logo.png',
   type: 'website',
 });

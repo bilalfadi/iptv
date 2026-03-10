@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     : post.excerpt?.rendered?.replace(/<[^>]*>/g, '') || '';
 
   // Use exact WordPress URL as canonical (remove trailing slash)
-  const rawCanonical = post.link || `https://4kxtreamiptv.com/blog/${post.slug}`;
+  const rawCanonical = post.link || `https://www.4kxtreamiptv.com/blog/${post.slug}`;
   const canonicalUrl = rawCanonical.replace(/\/$/, '');
 
   // Extract image from content if available
@@ -70,9 +70,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
   // Extract image from content if available
   const contentMatch = post.content?.match(/<img[^>]+src="([^"]+)"/i);
-  const imageUrl = contentMatch ? contentMatch[1].startsWith('http') ? contentMatch[1] : `https://4kxtreamiptv.com${contentMatch[1]}` : 'https://4kxtreamiptv.com/logo.png';
+  const imageUrl = contentMatch ? contentMatch[1].startsWith('http') ? contentMatch[1] : `https://www.4kxtreamiptv.com${contentMatch[1]}` : 'https://www.4kxtreamiptv.com/logo.png';
 
-  const canonicalUrl = post.link || `https://4kxtreamiptv.com/blog/${post.slug}/`;
+  const canonicalUrl = post.link || `https://www.4kxtreamiptv.com/blog/${post.slug}/`;
   const excerptText = typeof post.excerpt === 'string' 
     ? post.excerpt 
     : post.excerpt?.rendered?.replace(/<[^>]*>/g, '') || '';
@@ -165,7 +165,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               </div>
               <div className="flex gap-3">
                 <a 
-                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://4kxtreamiptv.com/blog/${post.slug}`)}`}
+                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://www.4kxtreamiptv.com/blog/${post.slug}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-teal-600 hover:bg-teal-700 rounded-full flex items-center justify-center transition-colors"
@@ -173,7 +173,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   <span className="text-white font-bold">X</span>
                 </a>
                 <a 
-                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://4kxtreamiptv.com/blog/${post.slug}`)}`}
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://www.4kxtreamiptv.com/blog/${post.slug}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-colors"
@@ -181,7 +181,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   <span className="text-white font-bold">f</span>
                 </a>
                 <a 
-                  href={`https://wa.me/?text=${encodeURIComponent(`${post.title} - https://4kxtreamiptv.com/blog/${post.slug}`)}`}
+                  href={`https://wa.me/?text=${encodeURIComponent(`${post.title} - https://www.4kxtreamiptv.com/blog/${post.slug}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-green-600 hover:bg-green-700 rounded-full flex items-center justify-center transition-colors"

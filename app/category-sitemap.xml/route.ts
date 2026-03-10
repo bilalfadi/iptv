@@ -15,7 +15,7 @@ export async function GET() {
       });
     }
 
-    const baseUrl = 'https://4kxtreamiptv.com';
+    const baseUrl = 'https://www.4kxtreamiptv.com';
     const lastmod = new Date().toISOString();
     const urlEntries = categories.map((category: any) => {
       const url = category.link || `${baseUrl}/category/${category.slug}/`;

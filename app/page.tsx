@@ -1,4 +1,4 @@
-﻿import Header from '@/components/Header'
+import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import FastStreaming from '@/components/FastStreaming'
 import TrustedSection from '@/components/TrustedSection'
@@ -19,8 +19,8 @@ export default function Home() {
     provider: {
       '@type': 'Organization',
       name: '4K Xtream IPTV',
-      url: 'https://4kxtreamiptv.com',
-      logo: 'https://4kxtreamiptv.com/logo.png',
+      url: 'https://www.4kxtreamiptv.com',
+      logo: 'https://www.4kxtreamiptv.com/logo.png',
       contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'Customer Service',
@@ -36,7 +36,7 @@ export default function Home() {
       price: '14.00',
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock',
-      url: 'https://4kxtreamiptv.com/pricing/',
+      url: 'https://www.4kxtreamiptv.com/pricing/',
       priceValidUntil: '2025-12-31',
     },
     aggregateRating: {
@@ -68,7 +68,7 @@ export default function Home() {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://4kxtreamiptv.com/',
+        item: 'https://www.4kxtreamiptv.com/',
       },
     ],
   };

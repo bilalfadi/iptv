@@ -32,7 +32,7 @@ export const metadata: Metadata = generateSEO({
     'IPTV premium',
     'IPTV subscription plans',
   ],
-  canonical: 'https://4kxtreamiptv.com',
+  canonical: 'https://www.4kxtreamiptv.com',
   image: '/logo.png',
   type: 'website',
 })
@@ -46,7 +46,7 @@ export default function RootLayout({
     type: 'WebSite',
     data: {
       name: '4K Xtream IPTV',
-      url: 'https://4kxtreamiptv.com',
+      url: 'https://www.4kxtreamiptv.com',
       description: 'Premium IPTV Streaming Service with 30,000+ TV channels and 200,000+ Movies and Series',
     },
   });
@@ -55,8 +55,8 @@ export default function RootLayout({
     type: 'Organization',
     data: {
       name: '4K Xtream IPTV',
-      url: 'https://4kxtreamiptv.com',
-      logo: 'https://4kxtreamiptv.com/logo.png',
+      url: 'https://www.4kxtreamiptv.com',
+      logo: 'https://www.4kxtreamiptv.com/logo.png',
       description: 'Premium IPTV Streaming Service',
     },
   });

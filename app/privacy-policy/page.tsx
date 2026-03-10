@@ -8,7 +8,7 @@ export const metadata: Metadata = generateSEO({
   title: 'Privacy Policy',
   description: 'Learn how 4K Xtream IPTV collects, uses, and protects your personal information. Our comprehensive privacy policy outlines data collection, usage, and security practices.',
   keywords: ['privacy policy', 'data protection', 'GDPR', 'privacy', 'data security'],
-  canonical: 'https://4kxtreamiptv.com/privacy-policy',
+  canonical: 'https://www.4kxtreamiptv.com/privacy-policy',
   image: '/logo.png',
   type: 'website',
 });

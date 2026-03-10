@@ -8,7 +8,7 @@ export const metadata: Metadata = generateSEO({
   title: 'Refund Policy',
   description: 'Learn about our 7-day money-back guarantee and refund process at 4K Xtream IPTV. Full refund policy details and how to request a refund.',
   keywords: ['refund policy', 'money back guarantee', 'IPTV refund', 'refund process'],
-  canonical: 'https://4kxtreamiptv.com/refund-policy',
+  canonical: 'https://www.4kxtreamiptv.com/refund-policy',
   image: '/logo.png',
   type: 'website',
 });
