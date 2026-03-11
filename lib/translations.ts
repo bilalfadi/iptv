@@ -229,11 +229,28 @@ export const translations = {
       installation: {
         title: 'Installation Tutorial',
         subtitle: 'Easy Setup Guide',
-        description: 'Start with 4K Xtream IPTV: Your Ultimate Streaming Experience Awaits! Compatible with Smart TVs, smartphones, tablets, MAG Boxes, PCs, and more.',
-        step1: { title: 'Download App', description: 'Install your preferred IPTV player from the app store' },
-        step2: { title: 'Open Settings', description: 'Go to settings and select "Add Playlist" or "Login with Xtream"' },
-        step3: { title: 'Enter Credentials', description: 'Input the server URL, username, and password we provided' },
-        step4: { title: 'Start Watching', description: 'Enjoy thousands of channels and on-demand content' },
+        description:
+          'Getting started with 4K Xtream IPTV is simple. Download a compatible IPTV app, request your trial or subscription, and start streaming live TV, sports, movies and series in minutes on any device.',
+        step1: {
+          title: 'Download a compatible IPTV app',
+          description:
+            'On your Smart TV, Firestick, Android, iOS or PC, open the app store and install an IPTV player such as IPTV Smarters, TiviMate or another Xtream Codes compatible app.',
+        },
+        step2: {
+          title: 'Request your IPTV trial or plan',
+          description:
+            'Visit our IPTV Trial or Pricing page and send us a message via WhatsApp or email. We will create your line and send you login details (M3U / Xtream Codes).',
+        },
+        step3: {
+          title: 'Enter your IPTV credentials',
+          description:
+            'Open the IPTV app, go to Add Playlist or Xtream Codes login and carefully enter the server URL, username and password we provide you.',
+        },
+        step4: {
+          title: 'Enjoy 4K IPTV streaming',
+          description:
+            'Save the profile, let the channels load and start watching live TV, premium sports, movies and series in smooth HD & 4K quality.',
+        },
         devicesTitle: 'Supported Devices',
         devicesSubtitle: 'Works on all your favorite devices',
         appsTitle: 'Recommended IPTV Apps',
